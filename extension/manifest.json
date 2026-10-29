@@ -1,8 +1,12 @@
 {
   "manifest_version": 3,
   "name": "React CTC",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Click to Component: Alt+hover highlights a component, Alt+scroll walks the hierarchy, Alt+click opens it in VS Code.",
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "react-ctc@symeon.dev",
