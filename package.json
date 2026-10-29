@@ -1,0 +1,27 @@
+{
+  "name": "react-ctc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/content.ts --bundle --format=iife --target=firefox142 --outfile=extension/content.js",
+    "watch": "pnpm build --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "oxlint && web-ext lint --source-dir extension",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "start": "web-ext run --source-dir extension",
+    "package": "pnpm build && web-ext build --source-dir extension --overwrite-dest"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "jsdom": "^29.1.1",
+    "oxfmt": "^0.75.0",
+    "oxlint": "^1.90.0",
+    "oxlint-tsgolint": "^7.0.2005",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5",
+    "web-ext": "^10.8.0"
+  }
+}

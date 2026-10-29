@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 120,
+  "jsdoc": true,
+  "sortImports": true,
+  "ignorePatterns": ["extension/content.js", "pnpm-lock.yaml"]
+}
