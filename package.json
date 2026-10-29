@@ -2,6 +2,7 @@
   "name": "react-ctc",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "esbuild src/content.ts --bundle --format=iife --target=firefox142 --outfile=extension/content.js",
