@@ -36,3 +36,25 @@ pnpm start
 `pnpm start` launches Firefox with the extension loaded (`web-ext run`). To load it by hand, open `about:debugging#/runtime/this-firefox`, click "Load Temporary Add-on…" and pick `extension/manifest.json`.
 
 `pnpm package` writes a zip to `web-ext-artifacts/`. Requires Firefox 142+.
+
+## Build from source
+
+These steps produce the exact `extension/content.js` that is in the published package. esbuild bundles it from `src/*.ts`, without minification.
+
+Environment: macOS or Linux with a POSIX shell and network access. Built on macOS 26.0 (arm64).
+
+Required programs:
+
+| Program | Version | Install                                                                                   |
+| ------- | ------- | ----------------------------------------------------------------------------------------- |
+| Node.js | 24.x    | `nvm install` (reads `.nvmrc`, 24.14.0), or the installer from https://nodejs.org         |
+| npm     | 10+     | Comes with Node.js                                                                        |
+| pnpm    | 12.4.2  | No install needed. `build.sh` runs it with `npx pnpm@12.4.2`                              |
+| esbuild | 0.28.2  | No install needed. `pnpm install` installs it from `pnpm-lock.yaml`, like all other tools |
+
+Steps:
+
+1. Install Node.js 24.
+2. In the project folder, run `./build.sh`.
+
+`build.sh` checks the Node.js version, installs the dependencies from the lockfile, builds `extension/content.js` and writes the package to `web-ext-artifacts/react_ctc-<version>.zip`.
